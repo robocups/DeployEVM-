@@ -1230,6 +1230,10 @@ contract HelloWorld {
             return (0, true); // Overflow occurred
         }
         return (_a + _b, false);
+          if (_b > MAX_INT - _a) {
+            return (0, true); // Overflow occurred
+        }
+        return (_a + _b, false);
     }
 
     function subtractor(uint256 _a, uint256 _b) external pure returns (uint256 difference, bool error) {
