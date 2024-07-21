@@ -1247,3 +1247,17 @@ contract HelloWorld {
         storedInteger -= 1;
     }
 }
+
+
+--
+
+    function subtractor(uint256 _a, uint256 _b) external pure returns (uint256 difference, bool error) {
+        if (_b > _a) {
+            return (0, true); // Underflow occurred
+        }
+        return (_a - _b, false);
+    }
+
+    function decement() public {
+        storedInteger -= 1;
+    }
